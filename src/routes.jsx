@@ -3,19 +3,22 @@ import { Switch, Route } from "react-router-dom"
 
 import Home from '../src/pages/home'
 import Clients from '../src/pages/myClients'
+import CreateClients from '../src/pages/createClients'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default () => {
     return(
         <Switch>
             <Route exact path="/">
-                login
+                <Home/>
             </Route>
+
             <Route exact path="/myClients">
-                clientes
+                <Clients/>
             </Route>
+
             <Route exact path="/createClients">
-                Adcionar cliente.
+               <CreateClients/>
             </Route>
             
         </Switch>

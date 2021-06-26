@@ -1,9 +1,12 @@
-import { escapePathForRegex } from 'jest-regex-util'
 import React from 'react'
+
+import { ContainerPage } from '../../components/main'
 
 const Home = () => {
     return(
-        <div>Home</div>
+        <ContainerPage>
+            Home
+        </ContainerPage>
     )
 }
 
