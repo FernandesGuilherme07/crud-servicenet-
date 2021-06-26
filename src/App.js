@@ -1,17 +1,24 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 import Header from './components/header'
 import Footer from './components/footer'
+
+import Routes from './routes'
 
 import './App.css'
 
 function App(){
   return (
-    <div>
+    <BrowserRouter>
+
       <Header/>
-      <div>Páginas</div>
+  
+      <Routes/>
+
+
       <Footer/>
-    </div>
+    </BrowserRouter>
   )
 }
 

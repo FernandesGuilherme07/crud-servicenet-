@@ -13,7 +13,7 @@ export default function Header() {
                 </div>
                 <nav>
                     <ul>
-                        <li>Configurações</li>
+                        <li>Add Cliente</li>
                         <li>Sair</li>
                     </ul>
                 </nav>
