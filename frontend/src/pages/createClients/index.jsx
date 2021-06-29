@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
+import { Formik, Form, Field } from 'formik'
 
-import  { Cad } from './styled'
 
 const API = process.env.REACT_APP_API;
 
@@ -94,14 +94,25 @@ const API = process.env.REACT_APP_API;
     setUsers(data);
   };
 
+  function onSubmit(values, actions) {
+    console.log('SUBMIT', values);
+  }
 
 
-  return (
-    <Cad>
+
+return (
+  <div className="container position-static mt-5 mb-5">
+
+    <Formik
+    onSubmit={onSubmit}
+    validateOnMount
+     
+     render={({ value, setFieldValue }) => (
+      <div className="row justify-content-center align-items-center">
       <div className="col-md-4">
-        <form onSubmit={handleSubmit} className="card card-body">
-          <div className="form-group">
-            <input
+        <Form onSubmit={handleSubmit} className="card card-body">
+          <div className="form-group mb-3">
+            <Field
               type="text"
               onChange={(e) => setName(e.target.value)}
               value={name}
@@ -112,8 +123,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
@@ -122,8 +133,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="password"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
@@ -132,28 +143,30 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
-              type="number"
+          <div className="form-group mb-3">
+            <Field
+              type="text"
               onChange={(e) => setContact(e.target.value)}
               value={contact}
               className="form-control"
               placeholder="contato"
+           
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group  mb-3">
+            <Field
               type="text"
-              onChange={(e) => setCep(e.target.value)}
+          
               value={cep}
               className="form-control"
               placeholder=" cep"
+              onChange={(e) => setContact(e.target.value)}
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group  mb-3">
+            <Field
               type="text"
               onChange={(e) => setNation(e.target.value)}
               value={nation}
@@ -163,7 +176,7 @@ const API = process.env.REACT_APP_API;
 
           </div>
           <div className="form-group">
-            <input
+            <Field
               type="text"
               onChange={(e) => setState(e.target.value)}
               value={state}
@@ -172,8 +185,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="text"
               onChange={(e) => setCity(e.target.value)}
               value={city}
@@ -182,8 +195,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="text"
               onChange={(e) => setDistrict(e.target.value)}
               value={district}
@@ -192,8 +205,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="text"
               onChange={(e) => setCep(e.target.value)}
               value={street}
@@ -202,8 +215,8 @@ const API = process.env.REACT_APP_API;
             />
           </div>
 
-          <div className="form-group">
-            <input
+          <div className="form-group mb-3">
+            <Field
               type="text"
               onChange={(e) => setNumber(e.target.value)}
               value={number}
@@ -214,9 +227,11 @@ const API = process.env.REACT_APP_API;
           <button className="btn btn-primary btn-block">
             {editing ? "Update" : "Create"}
           </button>
-         </form>
+         </Form>
             </div>
-    </Cad>
-)
-
+        </div>
+     )}
+        />
+   </div> 
+  )
 }

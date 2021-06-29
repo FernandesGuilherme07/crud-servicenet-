@@ -1,9 +1,11 @@
 import React from "react"
 import { Switch, Route } from "react-router-dom"
 
-import { Myclients }from '../src/pages/home'
+
 
 import { Users } from "./pages/createClients"
+
+import { myClients } from './pages/myclients'
 
 
 
@@ -12,7 +14,7 @@ export default () => {
     return(
         <Switch>
             <Route exact path="/">
-                <Myclients/>
+             <myClients/>
             </Route>
 
             <Route exact path="/createclients">
